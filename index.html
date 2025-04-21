@@ -3,57 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NovaHub</title>
+  <title>NovaHub - Game Hub</title>
   <style>
     body {
       margin: 0;
       background-color: #0d1117;
       color: #c9d1d9;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
+      text-align: center;
     }
+    
     h1 {
       font-size: 3em;
+      margin-bottom: 20px;
+      color: #58a6ff;
     }
+
     .game-launcher {
-      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+      width: 80%;
+      max-width: 1200px;
     }
+
     .game-button {
       background: #161b22;
       border: 1px solid #30363d;
       color: #c9d1d9;
-      padding: 10px 20px;
-      margin: 10px;
+      padding: 20px;
+      font-size: 1.2em;
+      border-radius: 12px;
+      transition: background 0.3s, transform 0.2s;
       cursor: pointer;
-      border-radius: 8px;
-      font-size: 1em;
-      transition: background 0.3s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
+
     .game-button:hover {
       background: #21262d;
+      transform: translateY(-5px);
     }
+
+    .game-button:active {
+      transform: translateY(2px);
+    }
+
     iframe {
-      margin-top: 20px;
+      margin-top: 30px;
       width: 90%;
+      max-width: 1200px;
       height: 600px;
       border: none;
       display: none;
+      border-radius: 12px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 1em;
+      color: #6a737d;
+    }
+
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to NovaHub</h1>
+  <h1>Welcome to NovaHub - Your Game Hub</h1>
   <div class="game-launcher">
     <button class="game-button" onclick="launchGame('https://1v1.lol')">1v1.lol</button>
     <button class="game-button" onclick="launchGame('https://retrobowl.me')">Retro Bowl</button>
     <button class="game-button" onclick="launchGame('https://slope-game.github.io/slope/')">Slope</button>
-    <button class="game-button" onclick="launchGame('https://ubg44.github.io/football-legends/')">Football Legends</button>
+    <button class="game-button" onclick="launchGame('https://htmlgames.com/football-legends/')">Football Legends</button>
+    <button class="game-button" onclick="launchGame('https://flappybird.io')">Flappy Bird</button>
+    <button class="game-button" onclick="launchGame('https://agar.io')">Agar.io</button>
+    <button class="game-button" onclick="launchGame('https://krunker.io')">Krunker.io</button>
+    <button class="game-button" onclick="launchGame('https://slither.io')">Slither.io</button>
+    <button class="game-button" onclick="launchGame('https://tetris.com/play-tetris')">Tetris</button>
   </div>
+
   <iframe id="game-frame"></iframe>
+
+  <footer>
+    <p>Made with ❤️ by NovaHub Team | <a href="https://github.com/TpsJonathan68599/NovaHub" target="_blank">GitHub Repo</a></p>
+  </footer>
 
   <script>
     function launchGame(url) {
