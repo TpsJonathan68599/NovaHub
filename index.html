@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaHub</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    .game-launcher {
+      margin-top: 30px;
+    }
+    .game-button {
+      background: #161b22;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: background 0.3s;
+    }
+    .game-button:hover {
+      background: #21262d;
+    }
+    iframe {
+      margin-top: 20px;
+      width: 90%;
+      height: 600px;
+      border: none;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to NovaHub</h1>
+  <div class="game-launcher">
+    <button class="game-button" onclick="launchGame('https://1v1.lol')">1v1.lol</button>
+    <button class="game-button" onclick="launchGame('https://retrobowl.me')">Retro Bowl</button>
+    <button class="game-button" onclick="launchGame('https://slope-game.github.io/slope/')">Slope</button>
+    <button class="game-button" onclick="launchGame('https://ubg44.github.io/football-legends/')">Football Legends</button>
+  </div>
+  <iframe id="game-frame"></iframe>
+
+  <script>
+    function launchGame(url) {
+      const iframe = document.getElementById('game-frame');
+      iframe.src = url;
+      iframe.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
